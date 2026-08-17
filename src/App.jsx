@@ -3,6 +3,8 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
+import ZombieGame from './components/ZombieGame';
+import RadioChat from './components/RadioChat';
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
         <About />
         <Experience />
         <Projects />
+        <RadioChat />
+        <ZombieGame />
       </main>
       
       <footer style={{ textAlign: 'center', padding: '3rem 0', color: 'var(--text-muted)', borderTop: '1px solid var(--glass-border)', marginTop: '5rem' }}>
