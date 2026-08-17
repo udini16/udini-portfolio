@@ -6,6 +6,7 @@ const navLinks = [
   { name: 'Logs', href: '#about' },
   { name: 'History', href: '#experience' },
   { name: 'Schematics', href: '#projects' },
+  { name: 'Resume', href: '/resume.pdf' },
 ];
 
 export default function Navbar() {
@@ -39,7 +40,7 @@ export default function Navbar() {
 
         <div className="nav-center">
           {navLinks.map((link) => (
-            <a key={link.name} href={link.href} className="nav-link-hud">
+            <a key={link.name} href={link.href} className="nav-link-hud" target={link.name === 'Resume' ? '_blank' : undefined} rel={link.name === 'Resume' ? 'noopener noreferrer' : undefined}>
               [{link.name}]
             </a>
           ))}

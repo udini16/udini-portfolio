@@ -92,6 +92,9 @@ export default function Hero() {
                 <a href="#about" className="btn-hud">
                   [ READ LOGS ]
                 </a>
+                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn-hud">
+                  [ DOWNLOAD RESUME ]
+                </a>
               </div>
             </div>
             <div className="hud-footer">
