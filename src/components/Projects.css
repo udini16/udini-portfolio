@@ -1,0 +1,98 @@
+.schematics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.schematic-card {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.schematic-image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  border: 1px solid var(--border-hud);
+  overflow: hidden;
+  margin-bottom: 1rem;
+  background: black;
+}
+
+.schematic-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: sepia(1) hue-rotate(60deg) brightness(0.6) contrast(1.5); /* Night vision / terminal green effect */
+  transition: all 0.3s ease;
+}
+
+.schematic-card:hover .schematic-image img {
+  filter: sepia(0) hue-rotate(0deg) brightness(1) contrast(1);
+}
+
+.scanlines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.2) 2px, rgba(0, 0, 0, 0.2) 4px);
+  pointer-events: none;
+}
+
+.schematic-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.schematic-category {
+  color: var(--rust-yellow);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.schematic-title {
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.schematic-desc {
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.schematic-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.hud-badge {
+  font-size: 0.9rem;
+  border: 1px solid var(--text-muted);
+  color: var(--text-primary);
+  padding: 0.1rem 0.5rem;
+  background: rgba(0,0,0,0.5);
+}
+
+.schematic-links {
+  display: flex;
+  gap: 1rem;
+  border-top: 1px dashed var(--border-hud);
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+.small-btn {
+  padding: 0.4rem 0.8rem;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}

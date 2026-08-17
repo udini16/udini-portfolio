@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+:root {
+  /* Project Zomboid Theme Colors */
+  --bg-primary: #121411; /* Dark gritty background */
+  --bg-secondary: #1f241d; /* Slightly lighter for panels */
+  --bg-tertiary: #2a3128;
+  
+  /* Accents */
+  --blood-red: #8b0000;
+  --blood-bright: #cc0000;
+  --rust-yellow: #b89742;
+  --army-green: #3d4a3e;
+  
+  /* Text */
+  --text-primary: #d1d5db; /* Off-white / light gray */
+  --text-muted: #8b9487; /* Greenish gray */
+  --text-alert: #ef4444;
+
+  /* UI Borders */
+  --border-hud: rgba(255, 255, 255, 0.15);
+  --border-thick: 2px solid var(--border-hud);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: crosshair; /* Global crosshair cursor */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'VT323', monospace;
+  background-color: var(--bg-primary);
+  background-image: 
+    radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.8) 100%), /* Vignette */
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.05) 2px, rgba(0, 0, 0, 0.05) 4px); /* Scanlines */
+  background-attachment: fixed;
+  color: var(--text-primary);
+  line-height: 1.4;
+  overflow-x: hidden;
+  font-size: 1.2rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'VT323', monospace;
+  text-transform: uppercase;
+  color: var(--rust-yellow);
+  letter-spacing: 1px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: var(--blood-bright);
+}
+
+ul {
+  list-style: none;
+}
+
+/* Utilities */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section {
+  padding: 6rem 0;
+  position: relative;
+}
+
+/* HUD Panel (Zomboid Inventory Style) */
+.hud-panel {
+  background: rgba(10, 12, 10, 0.85);
+  border: var(--border-thick);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8), 0 5px 15px rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+}
+
+.text-alert {
+  color: var(--text-alert);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+  border-left: 1px solid var(--border-hud);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--army-green);
+  border: 1px solid var(--border-hud);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--rust-yellow);
+}
+
+/* Blood Splatter utility */
+.blood-splatter {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: radial-gradient(circle, rgba(139,0,0,0.8) 0%, rgba(139,0,0,0) 70%);
+  pointer-events: none;
+  opacity: 0;
+  z-index: 50;
+}
+
+.blood-active {
+  animation: splatter 2s forwards;
+}
+
+@keyframes splatter {
+  0% { opacity: 0; transform: scale(0.5); }
+  10% { opacity: 1; transform: scale(1.2); }
+  100% { opacity: 0; transform: scale(1.5); }
+}

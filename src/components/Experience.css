@@ -1,0 +1,65 @@
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.history-item {
+  border-left: 4px solid var(--army-green);
+  transition: border-color 0.2s ease;
+}
+
+.history-item:hover {
+  border-left-color: var(--rust-yellow);
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed var(--border-hud);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.history-type {
+  color: var(--text-muted);
+}
+
+.history-date {
+  color: var(--rust-yellow);
+}
+
+.history-title {
+  font-size: 1.6rem;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.history-org {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.history-desc {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.history-status {
+  font-size: 1.1rem;
+  background: rgba(0,0,0,0.5);
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border: 1px solid var(--border-hud);
+}
+
+.text-safe {
+  color: var(--rust-yellow); /* Or a muted green if preferred, but rust fits */
+}
+
+.text-alert {
+  color: var(--blood-bright);
+}
