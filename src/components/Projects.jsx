@@ -28,7 +28,7 @@ const projects = [
     description: 'Sports facility booking system with secure FPX payment gateway integration.',
     image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800',
     tags: ['Laravel', 'FPX'],
-    links: { github: '#', live: '#' }
+    links: { github: 'https://github.com/udini16/Racket_Arena', live: 'https://racket-arena.onrender.com' }
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ const projects = [
     description: 'Automated data extraction tool for analyzing and storing receipt information.',
     image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800',
     tags: ['Laravel', 'Tesseract OCR'],
-    links: { github: '#', live: '#' }
+    links: { github: 'https://github.com/udini16/OCR-Receipt-Invoice-Scanner', live: '#' }
   },
   {
     id: 5,
@@ -47,15 +47,6 @@ const projects = [
     image: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&q=80&w=800',
     tags: ['Android', 'Java MVVM'],
     links: { github: 'https://github.com/udini16/Recycle-Request-App', live: '#' }
-  },
-  {
-    id: 6,
-    title: 'Job Recruitment System',
-    category: 'FACTION RECRUITMENT',
-    description: 'Platform bridging employers and candidates with streamlined application tracking.',
-    image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80&w=800',
-    tags: ['Java Servlet', 'MVC Pattern'],
-    links: { github: '#', live: '#' }
   },
   {
     id: 7,
@@ -72,7 +63,7 @@ export default function Projects() {
   return (
     <section id="projects" className="section">
       <div className="container">
-        <motion.div 
+        <motion.div
           className="section-heading"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -83,7 +74,7 @@ export default function Projects() {
 
         <div className="schematics-grid">
           {projects.map((project, index) => (
-            <motion.div 
+            <motion.div
               className="schematic-card hud-panel"
               key={project.id}
               initial={{ opacity: 0, scale: 0.95 }}
@@ -95,12 +86,12 @@ export default function Projects() {
                 <img src={project.image} alt={project.title} />
                 <div className="scanlines"></div>
               </div>
-              
+
               <div className="schematic-info">
                 <div className="schematic-category">[{project.category}]</div>
                 <h3 className="schematic-title">{project.title}</h3>
                 <p className="schematic-desc">{project.description}</p>
-                
+
                 <div className="schematic-tags mb-3">
                   {project.tags.map(tag => (
                     <span key={tag} className="hud-badge">{tag}</span>

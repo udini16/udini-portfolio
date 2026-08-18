@@ -62,6 +62,16 @@ export default function RadioChat() {
     }
   };
 
+  const handleSuggestionClick = (suggestion) => {
+    setInput(suggestion);
+  };
+
+  const SUGGESTIONS = [
+    "Who is Izzuddin?",
+    "What are his skills?",
+    "Tell me about his experience"
+  ];
+
   return (
     <div className="radio-chat-container">
       <AnimatePresence>
@@ -95,6 +105,20 @@ export default function RadioChat() {
                 </div>
               )}
             </div>
+
+            {messages.length === 1 && (
+              <div className="suggestions-container">
+                {SUGGESTIONS.map((sug, i) => (
+                  <button 
+                    key={i} 
+                    className="suggestion-btn" 
+                    onClick={() => handleSuggestionClick(sug)}
+                  >
+                    {sug}
+                  </button>
+                ))}
+              </div>
+            )}
 
             <form className="radio-input-area" onSubmit={handleSubmit}>
               <input
