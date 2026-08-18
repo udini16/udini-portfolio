@@ -49,6 +49,15 @@ const projects = [
     links: { github: 'https://github.com/udini16/Recycle-Request-App', live: '#' }
   },
   {
+    id: 6,
+    title: 'JobTracker / AI Portal',
+    category: 'EMPLOYMENT INTELLIGENCE',
+    description: 'A full-stack application that scrapes job postings and uses AI to generate personalized application emails based on resume data.',
+    image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80&w=800',
+    tags: ['React.js', 'Node.js', 'MySQL', 'AI Automation'],
+    links: { github: 'https://github.com/udini16/udini-portfolio', live: '#' }
+  },
+  {
     id: 7,
     title: 'Pokédex Web App',
     category: 'MUTANT DATABASE',
