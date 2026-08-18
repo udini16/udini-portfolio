@@ -35,19 +35,30 @@ export default function RadioChat() {
     }
 
     try {
-      const interaction = await genAIClient.interactions.create({
+      setMessages(prev => [...prev, { role: 'ai', text: '' }]);
+      
+      const stream = await genAIClient.interactions.create({
         model: "gemini-3.6-flash",
         input: userMsg,
         system_instruction: IZZUDDIN_SYSTEM_INSTRUCTION,
-        previous_interaction_id: interactionId || undefined
+        previous_interaction_id: interactionId || undefined,
+        stream: true
       });
 
-      setInteractionId(interaction.id);
-      
-      setMessages(prev => [...prev, { 
-        role: 'ai', 
-        text: interaction.output_text || '*STATIC*... Transmission failed.' 
-      }]);
+      let currentText = "";
+
+      for await (const event of stream) {
+        if (event.event_type === "step.delta" && event.delta.type === "text") {
+          currentText += event.delta.text;
+          setMessages(prev => {
+            const newMsgs = [...prev];
+            newMsgs[newMsgs.length - 1].text = currentText;
+            return newMsgs;
+          });
+        } else if (event.event_type === "interaction.completed") {
+          setInteractionId(event.interaction.id);
+        }
+      }
     } catch (error) {
       console.error("Gemini API Error details:", error);
       
