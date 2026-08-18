@@ -117,19 +117,17 @@ export default function RadioChat() {
               )}
             </div>
 
-            {messages.length === 1 && (
-              <div className="suggestions-container">
-                {SUGGESTIONS.map((sug, i) => (
-                  <button 
-                    key={i} 
-                    className="suggestion-btn" 
-                    onClick={() => handleSuggestionClick(sug)}
-                  >
-                    {sug}
-                  </button>
-                ))}
-              </div>
-            )}
+            <div className="suggestions-container">
+              {SUGGESTIONS.map((sug, i) => (
+                <button 
+                  key={i} 
+                  className="suggestion-btn" 
+                  onClick={() => handleSuggestionClick(sug)}
+                >
+                  {sug}
+                </button>
+              ))}
+            </div>
 
             <form className="radio-input-area" onSubmit={handleSubmit}>
               <input
