@@ -72,8 +72,24 @@ const projects = [
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState('All');
   
-  // Extract all unique tags
-  const allTags = ['All', ...new Set(projects.flatMap(p => p.tags))];
+  // Compute tag counts
+  const tagCounts = { 'All': projects.length };
+  projects.forEach(p => {
+    p.tags.forEach(tag => {
+      tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+    });
+  });
+
+  // Get unique tags sorted by count (descending)
+  const sortedTags = Object.keys(tagCounts).sort((a, b) => {
+    if (a === 'All') return -1;
+    if (b === 'All') return 1;
+    // Sort by count descending, then alphabetically if tied
+    if (tagCounts[b] !== tagCounts[a]) {
+      return tagCounts[b] - tagCounts[a];
+    }
+    return a.localeCompare(b);
+  });
 
   // Filter projects based on the active tag
   const filteredProjects = activeFilter === 'All' 
@@ -93,13 +109,13 @@ export default function Projects() {
         </motion.div>
 
         <div className="filter-container">
-          {allTags.map(tag => (
+          {sortedTags.map(tag => (
             <button
               key={tag}
               className={`filter-btn ${activeFilter === tag ? 'active' : ''}`}
               onClick={() => setActiveFilter(tag)}
             >
-              {tag}
+              {tag} <span style={{ opacity: 0.7, fontSize: '0.85em', marginLeft: '4px' }}>({tagCounts[tag]})</span>
             </button>
           ))}
         </div>
