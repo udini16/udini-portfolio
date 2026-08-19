@@ -129,3 +129,15 @@ ul {
   10% { opacity: 1; transform: scale(1.2); }
   100% { opacity: 0; transform: scale(1.5); }
 }
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+  .section {
+    padding: 4rem 0;
+  }
+  .hud-panel {
+    padding: 1.2rem;
+  }
+}

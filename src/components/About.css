@@ -114,4 +114,28 @@
   .skills-grid {
     grid-template-columns: 1fr;
   }
+  .stats-table td {
+    display: block;
+    padding: 0.4rem 0;
+    border: none;
+  }
+  .stats-table td:first-child {
+    width: 100%;
+    color: var(--rust-yellow);
+    padding-top: 1rem;
+    padding-bottom: 0.2rem;
+  }
+  .stats-table td:last-child {
+    border-bottom: 1px solid var(--border-hud);
+    padding-bottom: 1rem;
+    word-break: break-all;
+  }
+  .skill-item {
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 1rem;
+  }
+  .skill-lvl {
+    align-self: flex-start;
+  }
 }

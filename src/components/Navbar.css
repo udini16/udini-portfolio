@@ -84,4 +84,25 @@
   .nav-center {
     display: none; /* Hide links on mobile for simplicity in Zomboid HUD, keep health */
   }
+  
+  .navbar-container {
+    padding: 0 1rem;
+    gap: 1rem;
+  }
+  
+  .health-bar {
+    width: 100px; /* Reduce width so it fits */
+  }
+  
+  .health-label {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
 }
