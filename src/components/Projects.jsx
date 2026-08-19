@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Code } from 'lucide-react';
 import './Projects.css';
@@ -69,6 +70,16 @@ const projects = [
 ];
 
 export default function Projects() {
+  const [activeFilter, setActiveFilter] = useState('All');
+  
+  // Extract all unique tags
+  const allTags = ['All', ...new Set(projects.flatMap(p => p.tags))];
+
+  // Filter projects based on the active tag
+  const filteredProjects = activeFilter === 'All' 
+    ? projects 
+    : projects.filter(p => p.tags.includes(activeFilter));
+
   return (
     <section id="projects" className="section">
       <div className="container">
@@ -81,8 +92,20 @@ export default function Projects() {
           <h2>// SCHEMATICS & BLUEPRINTS</h2>
         </motion.div>
 
+        <div className="filter-container">
+          {allTags.map(tag => (
+            <button
+              key={tag}
+              className={`filter-btn ${activeFilter === tag ? 'active' : ''}`}
+              onClick={() => setActiveFilter(tag)}
+            >
+              {tag}
+            </button>
+          ))}
+        </div>
+
         <div className="schematics-grid">
-          {projects.map((project, index) => (
+          {filteredProjects.map((project, index) => (
             <motion.div
               className="schematic-card hud-panel"
               key={project.id}

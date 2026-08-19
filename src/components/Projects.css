@@ -96,3 +96,36 @@
   align-items: center;
   gap: 0.5rem;
 }
+
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+.filter-btn {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid var(--border-hud);
+  color: var(--text-primary);
+  padding: 0.5rem 1rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.filter-btn:hover {
+  border-color: var(--rust-yellow);
+  color: white;
+  box-shadow: 0 0 10px rgba(255, 170, 0, 0.2);
+}
+
+.filter-btn.active {
+  background: var(--rust-yellow);
+  color: black;
+  border-color: var(--rust-yellow);
+  font-weight: bold;
+}
