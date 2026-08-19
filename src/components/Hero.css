@@ -221,3 +221,23 @@
     height: 140px;
   }
 }
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: 8rem; /* Clear the taller mobile navbar */
+  }
+}
+
+@media (max-width: 400px) {
+  .hero-section {
+    padding-top: 9rem; /* Clear the stacked navbar on very small screens */
+  }
+  
+  .polaroid {
+    width: 140px;
+  }
+  
+  .polaroid-img-wrapper {
+    height: 120px;
+  }
+}
