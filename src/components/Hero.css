@@ -4,56 +4,115 @@
   align-items: center;
   position: relative;
   padding-top: 5rem;
+  background-image: url('/zomboid-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
-.hero-container {
-  width: 100%;
+/* Darken the map background so text remains readable */
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 1;
+}
+
+.hero-full-layout {
   position: relative;
   z-index: 10;
-  pointer-events: none; /* Let clicks pass to zombies */
-}
-
-.hero-layout {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 4rem;
+}
+
+/* --- Left Side: Polaroids --- */
+.hero-visuals {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 2rem;
+  position: relative;
+}
+
+.polaroid {
+  background: #eee;
+  padding: 10px 10px 25px 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.8);
+  position: relative;
+  width: 220px;
+}
+
+.polaroid-img-wrapper {
+  background: black;
   width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border: 1px solid #ccc;
 }
 
-.hero-avatar {
-  pointer-events: auto;
-  flex: 0 1 250px; /* Don't grow, shrink if needed, base 250px */
-  min-width: 150px;
-}
-
-.hero-avatar img {
+.polaroid img {
   width: 100%;
-  height: auto;
-  filter: drop-shadow(0 10px 15px rgba(0,0,0,0.9));
+  height: 100%;
+  object-fit: cover;
+  filter: contrast(1.2) brightness(0.9);
 }
 
-.avatar-label {
-  text-align: center;
-  color: #333;
+.polaroid.zombified img {
+  filter: contrast(1.5) brightness(0.8) sepia(0.5) hue-rotate(60deg);
+}
+
+.polaroid-caption {
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
-  margin-top: 10px;
-  font-size: 1.2rem;
+  color: #111;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 1.1rem;
 }
 
-.hero-hud {
-  max-width: 700px;
-  pointer-events: auto; /* Re-enable clicks for the HUD panel */
-  flex-grow: 1;
+/* Sticky Tape effect */
+.tape {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 80px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  backdrop-filter: blur(2px);
 }
 
-.hud-header {
+/* --- Right Side: Main Dossier --- */
+.dossier-panel {
+  flex: 1.5;
+  background: rgba(15, 15, 15, 0.85);
+  border: 1px solid var(--border-hud);
+  padding: 2.5rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.9);
+  position: relative;
+  backdrop-filter: blur(5px);
+}
+
+.dossier-panel::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.3) 2px, rgba(0, 0, 0, 0.3) 4px);
+  pointer-events: none;
+}
+
+.dossier-header {
   display: flex;
   justify-content: space-between;
   border-bottom: 2px solid var(--border-hud);
   padding-bottom: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   font-size: 1.2rem;
   color: var(--text-muted);
 }
@@ -68,31 +127,44 @@
 }
 
 .hero-name {
-  font-size: clamp(3rem, 6vw, 4.5rem);
-  margin-bottom: 1rem;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 0.5rem;
+  color: white;
   text-shadow: 2px 2px 0 rgba(0,0,0,1);
 }
 
 .status-container {
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.7);
   padding: 0.5rem 1rem;
   border: 1px solid var(--border-hud);
   display: inline-block;
   margin-bottom: 2rem;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.dossier-body {
+  margin-bottom: 2.5rem;
+}
+
+.dossier-summary {
+  font-size: 1.15rem;
+  color: #ddd;
+  line-height: 1.6;
+  margin-bottom: 2rem;
 }
 
 .hero-stats {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 2.5rem;
+  gap: 0.8rem;
+  border-left: 2px solid var(--rust-yellow);
+  padding-left: 1rem;
 }
 
 .stat {
   display: flex;
   gap: 1rem;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 .stat-label {
@@ -102,51 +174,50 @@
 
 .stat-val {
   color: var(--text-primary);
+  font-weight: bold;
 }
 
 .hero-cta {
   display: flex;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
-.btn-hud {
+.btn-dossier {
   display: inline-block;
-  padding: 0.8rem 1.5rem;
-  background: rgba(0, 0, 0, 0.6);
+  padding: 0.8rem 1.2rem;
+  background: rgba(0, 0, 0, 0.8);
   border: 1px solid var(--text-muted);
   color: var(--rust-yellow);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   transition: all 0.2s ease;
   cursor: crosshair;
 }
 
-.btn-hud:hover {
+.btn-dossier:hover {
   background: var(--rust-yellow);
   color: black;
   border-color: var(--rust-yellow);
-  box-shadow: 0 0 10px var(--rust-yellow);
+  box-shadow: 0 0 15px rgba(255, 170, 0, 0.4);
 }
 
-.hud-footer {
-  border-top: 1px dashed var(--border-hud);
-  padding-top: 1rem;
-  font-size: 1.1rem;
-  color: var(--text-alert);
-}
-
-/* For the global click blood */
-.blood-splatter {
-  position: fixed;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-@media (max-width: 768px) {
-  .hero-layout {
+@media (max-width: 992px) {
+  .hero-full-layout {
     flex-direction: column;
-    align-items: center;
+    gap: 3rem;
+  }
+  
+  .hero-visuals {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .polaroid {
+    width: 160px;
+  }
+  
+  .polaroid-img-wrapper {
+    height: 140px;
   }
 }
