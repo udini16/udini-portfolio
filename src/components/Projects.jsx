@@ -56,7 +56,7 @@ const projects = [
     description: 'A full-stack application that scrapes job postings and uses AI to generate personalized application emails based on resume data.',
     image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80&w=800',
     tags: ['React.js', 'Node.js', 'MySQL', 'AI Automation'],
-    links: { github: 'https://github.com/udini16/udini-portfolio', live: '#' }
+    links: { github: 'https://github.com/udini16/JobTracker', live: '#' }
   },
   {
     id: 7,
@@ -65,13 +65,13 @@ const projects = [
     description: 'Interactive database of Pokémon utilizing external APIs for live data fetching.',
     image: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&q=80&w=800',
     tags: ['React.js', 'Tailwind CSS'],
-    links: { github: '#', live: '#' }
+    links: { github: 'https://github.com/udini16/pokemon-explorer-POKEDEX', live: 'https://pokemon-explorer-pokedex-pi.vercel.app/' }
   }
 ];
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState('All');
-  
+
   // Compute tag counts
   const tagCounts = { 'All': projects.length };
   projects.forEach(p => {
@@ -92,8 +92,8 @@ export default function Projects() {
   });
 
   // Filter projects based on the active tag
-  const filteredProjects = activeFilter === 'All' 
-    ? projects 
+  const filteredProjects = activeFilter === 'All'
+    ? projects
     : projects.filter(p => p.tags.includes(activeFilter));
 
   return (
