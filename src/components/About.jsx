@@ -5,7 +5,7 @@ export default function About() {
   return (
     <section id="about" className="section">
       <div className="container">
-        <motion.div 
+        <motion.div
           className="section-heading"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -24,7 +24,7 @@ export default function About() {
             <div className="polaroid-wrapper">
               <div className="polaroid">
                 <img src="/profile.jpg?v=2" alt="Survivor" onError={(e) => {
-                  e.target.onerror = null; 
+                  e.target.onerror = null;
                   e.target.src = "https://ui-avatars.com/api/?name=Muhammad+Izzuddin&background=3d4a3e&color=fff&size=512";
                 }} />
                 <div className="polaroid-caption">SUBJECT: IZZUDDIN</div>
@@ -34,10 +34,10 @@ export default function About() {
             <div className="log-details">
               <h3>BACKGROUND:</h3>
               <p className="typewriter-text">
-                Subject is a final year Computer Science student. Demonstrates high proficiency in full-stack development, AI applications, and UX design. 
+                Subject is a final year Computer Science student. Demonstrates high proficiency in full-stack development, AI applications, and UX design.
                 Adaptable in high-stress environments. Currently specializing in real-time object detection and OCR automation tools.
               </p>
-              
+
               <table className="stats-table mb-4">
                 <tbody>
                   <tr>
@@ -70,7 +70,7 @@ export default function About() {
               </div>
 
               <div className="inventory-actions mt-4">
-                <a href="/MuhammadIzzuddin_Resume.pdf" target="_blank" className="btn-hud">
+                <a href="/resume.pdf" target="_blank" className="btn-hud">
                   [ LOOT RESUME ]
                 </a>
               </div>
