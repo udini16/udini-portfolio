@@ -11,7 +11,7 @@ const projects = [
     description: 'Custom Spotify web client featuring secure OAuth, themed dashboard, and listening data export.',
     image: 'https://images.unsplash.com/photo-1614149162883-504ce4d13909?auto=format&fit=crop&q=80&w=800', // Update with actual asset later if needed
     tags: ['React.js', 'Tailwind CSS', 'Spotify API', 'Laravel'],
-    links: { github: 'https://github.com/udini16/spotify-custom-player', live: 'https://spotify-custom-player-blond.vercel.app/' }
+    links: { github: 'https://github.com/udini16/spotify-custom-player', live: '#' } //https://spotify-custom-player-blond.vercel.app/
   },
   {
     id: 2,
