@@ -15,20 +15,20 @@ const projects = [
   },
   {
     id: 2,
-    title: 'Urban Tree AI',
+    title: 'Urban Tree Species Identification',
     category: 'AI SURVIVAL TOOL',
-    description: 'Semi-real-time urban tree species identification in street view images using YOLOv10.',
+    description: 'Semi-real-time computer vision pipeline utilizing YOLOv10 and Python, automating the classification of urban tree species from Google Street View imagery.',
     image: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&q=80&w=800',
-    tags: ['Python', 'YOLOv10', 'Deep Learning'],
+    tags: ['Python', 'YOLOv10', 'Computer Vision'],
     links: { github: 'https://github.com/udini16/FYP_Tree_Identification_YOLOv10_GoogleStreetView', live: '#' }
   },
   {
     id: 3,
     title: 'Racket Arena',
     category: 'BASE MANAGEMENT',
-    description: 'Sports facility booking system with secure FPX payment gateway integration.',
+    description: 'Conflict-free scheduling engine for sports facilities with strict transactional validation, RBAC dashboards, and containerized backend deployments on Render.',
     image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800',
-    tags: ['Laravel', 'FPX'],
+    tags: ['Laravel', 'MySQL', 'PostgreSQL', 'Docker'],
     links: { github: 'https://github.com/udini16/Racket_Arena', live: 'https://racket-arena.onrender.com' }
   },
   {
@@ -51,21 +51,40 @@ const projects = [
   },
   {
     id: 6,
-    title: 'JobTracker / AI Portal',
+    title: 'Hermes JobPortal',
     category: 'EMPLOYMENT INTELLIGENCE',
-    description: 'A full-stack application that scrapes job postings and uses AI to generate personalized application emails based on resume data.',
+    description: 'Full-stack platform that aggregates vacancies via Puppeteer and dynamically generates tailored Markdown resumes and cover letters using OpenAI LLM.',
     image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80&w=800',
-    tags: ['React.js', 'Node.js', 'MySQL', 'AI Automation'],
+    tags: ['React.js', 'Node.js', 'Tailwind CSS', 'OpenAI API'],
     links: { github: 'https://github.com/udini16/JobTracker', live: '#' }
   },
   {
     id: 7,
-    title: 'Pokédex Web App',
+    title: 'Modern Pokédex',
     category: 'MUTANT DATABASE',
-    description: 'Interactive database of Pokémon utilizing external APIs for live data fetching.',
+    description: 'Responsive single-page web app built to consume and display external RESTful API endpoints with optimized client-side caching.',
     image: 'https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&q=80&w=800',
-    tags: ['React.js', 'Tailwind CSS'],
+    tags: ['React 18', 'TypeScript', 'Vite'],
     links: { github: 'https://github.com/udini16/pokemon-explorer-POKEDEX', live: 'https://pokemon-explorer-pokedex-pi.vercel.app/' }
+  },
+  {
+    id: 8,
+    title: 'MiniCRM',
+    category: 'PERSONNEL LOGISTICS',
+    description: 'Lightweight CRM platform built with Laravel 13 and Blade for managing companies and employees, featuring SPA-like page transitions with Swup.js & Anime.js, Sanctum authentication, and REST API endpoints.',
+    image: '/minicrm.jpg',
+    tags: ['Laravel', 'Tailwind CSS', 'Alpine.js', 'MySQL'],
+    links: { github: 'https://github.com/udini16/mini-crm', live: 'https://mini-crm-hl0f.onrender.com/' }
+  },
+  {
+    id: 9,
+    title: 'BajetKita',
+    category: 'RESOURCE & FINANCE TRACKER',
+    status: 'ONGOING',
+    description: 'Full-stack personal finance and expense tracker featuring a real-time financial dashboard, interactive Recharts visualizations, income & expense CRUD, dedicated savings goals, and Laravel Sanctum REST API.',
+    image: '/bajetkita.jpg?v=2',
+    tags: ['React.js', 'Laravel', 'Tailwind CSS', 'MySQL'],
+    links: { github: 'https://github.com/udini16/bajet_kita', live: '#' }
   }
 ];
 
@@ -133,6 +152,9 @@ export default function Projects() {
               <div className="schematic-image">
                 <img src={project.image} alt={project.title} />
                 <div className="scanlines"></div>
+                {project.status && (
+                  <span className="schematic-status">[{project.status}]</span>
+                )}
               </div>
 
               <div className="schematic-info">

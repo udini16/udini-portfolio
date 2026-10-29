@@ -39,6 +39,8 @@ SURVIVAL HISTORY (Experience):
 3. Service Crew @ Finescoop Sdn Bhd (2024, 3 Months). Managed store operations.
 
 SCHEMATICS (Projects):
+- MiniCRM (Completed): Lightweight CRM web application built with Laravel 13 (PHP 8.4), Blade, Tailwind CSS, Alpine.js, Swup.js, and Anime.js for managing companies and employees with SPA-style transitions and Sanctum authentication.
+- BajetKita (Ongoing): Full-stack personal finance and expenses tracker built with React 19, Tailwind CSS 4, Recharts, and a Laravel 11 REST API (Sanctum) for tracking daily expenses, income, and savings goals.
 - ASL Learning Application: Mobile app teaching sign language using object detection (YOLO) and CNN. Tech: Python, Kotlin, Android Studio, Firebase.
 - Facial Recognition Attendance System: Academic attendance logger using facial detection. Tech: Python, OpenCV, PyQt5, MySQL.
 - Vehicle Rental Web Application: A responsive web platform for managing vehicle rentals and admin dashboards. Tech: PHP, HTML/CSS, MySQL.

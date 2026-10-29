@@ -6,40 +6,32 @@ const timelineData = [
     type: 'experience',
     title: 'Full Stack Developer Intern',
     organization: 'Aptronics Sdn Bhd',
-    date: '2026 (3 Months)',
-    description: 'Contributed to full-stack web development and advanced simulation projects utilizing React and Unreal Engine 5.',
+    date: 'Mar 2026 - Jul 2026',
+    description: 'Engineered a custom C++ runtime scenario editor in Unreal Engine 5 (40% setup time reduction) and optimized simulation performance (20% crash reduction).',
     status: 'SURVIVED'
   },
   {
     type: 'experience',
-    title: 'Web & Mobile Apps Trainee',
-    organization: 'Softoya International Sdn Bhd',
-    date: '2024 (6 Months)',
-    description: 'Developed automated data extraction tools and assisted in scaling business management solutions.',
-    status: 'SURVIVED'
-  },
-  {
-    type: 'experience',
-    title: 'Service Crew',
-    organization: 'Finescoop Sdn Bhd',
-    date: '2024 (3 Months)',
-    description: 'Managed daily store operations, including inventory checks, cash handling, and closing procedures.',
+    title: 'Software Developer Intern',
+    organization: 'Softoya Sdn Bhd',
+    date: 'Sep 2023 - Feb 2024',
+    description: 'Developed responsive enterprise web components with Laravel and Alpine.js, and integrated Tesseract OCR API to automate data entry by 60%.',
     status: 'SURVIVED'
   },
   {
     type: 'education',
     title: 'Bachelor of Computer Science (Hons.)',
     organization: 'UiTM Cawangan Melaka, Kampus Jasin',
-    date: '2024 - Present',
-    description: 'CGPA: 3.5. Focusing on advanced software engineering, AI, and full-stack development.',
-    status: 'IN PROGRESS'
+    date: 'Completed: July 2026',
+    description: 'CGPA: 3.50. Focus on Software Engineering, Mobile Programming, Image Processing, and AI Algorithms.',
+    status: 'COMPLETED'
   },
   {
     type: 'education',
     title: 'Diploma in Computer Science',
-    organization: 'UiTM Cawangan Kampus Raub',
-    date: '2022 - 2024',
-    description: 'CGPA: 3.42. Built a strong foundation in programming, databases, and system analysis.',
+    organization: 'UiTM Cawangan Pahang, Kampus Raub',
+    date: 'Completed: Feb 2024',
+    description: 'CGPA: 3.41. Foundation in Data Structures, Java OOP, and Web Development.',
     status: 'COMPLETED'
   }
 ];

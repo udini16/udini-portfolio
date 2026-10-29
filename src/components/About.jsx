@@ -34,8 +34,7 @@ export default function About() {
             <div className="log-details">
               <h3>BACKGROUND:</h3>
               <p className="typewriter-text">
-                Subject is a final year Computer Science student. Demonstrates high proficiency in full-stack development, AI applications, and UX design.
-                Adaptable in high-stress environments. Currently specializing in real-time object detection and OCR automation tools.
+                Full-Stack Software Developer and Computer Science graduate with proven experience shipping production-grade web systems, high-performance simulation tools, and AI automation pipelines. Dedicated to building reliable, scalable web platforms and high-efficiency business workflows.
               </p>
 
               <table className="stats-table mb-4">
@@ -61,12 +60,12 @@ export default function About() {
 
               <h3>COMBAT PROFICIENCIES:</h3>
               <div className="skills-grid mt-3">
+                <div className="skill-item"><span className="skill-name">React / Node.js</span> <span className="skill-lvl">[LVL: 90]</span></div>
                 <div className="skill-item"><span className="skill-name">PHP / Laravel</span> <span className="skill-lvl">[LVL: 85]</span></div>
-                <div className="skill-item"><span className="skill-name">Python / Django</span> <span className="skill-lvl">[LVL: 80]</span></div>
-                <div className="skill-item"><span className="skill-name">React / Tailwind</span> <span className="skill-lvl">[LVL: 70]</span></div>
-                <div className="skill-item"><span className="skill-name">Java / Android</span> <span className="skill-lvl">[LVL: 60]</span></div>
-                <div className="skill-item"><span className="skill-name">YOLOv10 AI</span> <span className="skill-lvl text-alert">[LVL: 90 - EXPERT]</span></div>
-                <div className="skill-item"><span className="skill-name">Figma / UX</span> <span className="skill-lvl">[LVL: 50]</span></div>
+                <div className="skill-item"><span className="skill-name">C++ / Unreal Engine</span> <span className="skill-lvl">[LVL: 80]</span></div>
+                <div className="skill-item"><span className="skill-name">Docker / CI/CD</span> <span className="skill-lvl">[LVL: 70]</span></div>
+                <div className="skill-item"><span className="skill-name">Python / AI (YOLO)</span> <span className="skill-lvl text-alert">[LVL: 90 - EXPERT]</span></div>
+                <div className="skill-item"><span className="skill-name">SQL / PostgreSQL</span> <span className="skill-lvl">[LVL: 80]</span></div>
               </div>
 
               <div className="inventory-actions mt-4">
