@@ -28,7 +28,7 @@ const projects = [
     category: 'BASE MANAGEMENT',
     description: 'Conflict-free scheduling engine for sports facilities with strict transactional validation, RBAC dashboards, and containerized backend deployments on Render.',
     image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800',
-    tags: ['Laravel', 'MySQL', 'PostgreSQL', 'Docker'],
+    tags: ['Laravel', 'MySQL', 'Docker'],
     links: { github: 'https://github.com/udini16/Racket_Arena', live: 'https://racket-arena.onrender.com' }
   },
   {
@@ -71,9 +71,9 @@ const projects = [
     id: 8,
     title: 'MiniCRM',
     category: 'PERSONNEL LOGISTICS',
-    description: 'Lightweight CRM platform built with Laravel 13 and Blade for managing companies and employees, featuring SPA-like page transitions with Swup.js & Anime.js, Sanctum authentication, and REST API endpoints.',
+    description: 'Lightweight CRM platform built with Laravel 13 and Blade for managing companies and employees, featuring SPA-like page transitions with Swup.js & Anime.js, Sanctum authentication, and containerized Docker deployment.',
     image: '/minicrm.jpg',
-    tags: ['Laravel', 'Tailwind CSS', 'Alpine.js', 'MySQL'],
+    tags: ['Laravel', 'Tailwind CSS', 'Alpine.js', 'MySQL', 'Docker'],
     links: { github: 'https://github.com/udini16/mini-crm', live: 'https://mini-crm-hl0f.onrender.com/' }
   },
   {
